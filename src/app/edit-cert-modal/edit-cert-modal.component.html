@@ -1,2 +1,12 @@
-Edit Cert
-<button class="modal_cancel" (click)="close()">Cancel</button>
+<p class="modal_title">Edit certification</p>
+<input type="text" class="modal_input" placeholder="Title">
+<input type="text" class="modal_input" placeholder="Quarter">
+<select class="modal_input">
+    <option value="" selected>Q1</option>
+    <option value="">Q2</option>
+    <option value="">Q3</option>
+    <option value="">Q4</option>
+</select>
+<input type="text" class="modal_input" placeholder="Price">
+<button class="modal_submit hoverable">Save</button>
+<button class="modal_cancel hoverable" (click)="close()">Cancel</button>
