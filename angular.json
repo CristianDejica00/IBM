@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "certifications"
+  "defaultProject": "certifications",
+  "cli": {
+    "analytics": "e35cd0ed-0ce2-4f25-8730-e46eb4684b1e"
+  }
 }
