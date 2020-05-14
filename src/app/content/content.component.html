@@ -1,15 +1,22 @@
-<app-navbar></app-navbar>
-<div id="content_grid">
+<app-navbar (navbarEvent)="recieveNav($event)"></app-navbar>
 
-    <!--
+<div *ngIf="navRoute === 'Certificates'">
+  <div id="content_grid">
+    <div *ngFor="let cert of certData">
 
-        Cardurile astea apar in sectiunea "certifications" pentru clienti
 
-        <app-apply-card></app-apply-card>
 
-    -->
 
-    <!--
+      <!-- Cardurile astea apar in sectiunea "certifications" pentru clienti -->
+
+      <app-apply-card [cert]="cert"></app-apply-card>
+
+      <app-cert-card [cert]="cert"></app-cert-card>
+    </div>
+
+    <app-create-card></app-create-card>
+  </div>
+  <!--
 
         Cardurile astea apar in sectiunea "certifications" pentru manageri
 
@@ -17,8 +24,13 @@
         <app-cert-card></app-cert-card>
 
     -->
-
-    <!--
+</div>
+<div *ngIf="navRoute ==='Requests'">
+  <div id="content_grid">
+    <div *ngFor="let req of reqData">
+      <app-edit-card [req]="req"></app-edit-card>
+      <app-view-card [req]="req"></app-view-card>
+      <!--
 
         Cardurile astea apar in sectiunea "requests" pentru useri
 
@@ -26,12 +38,13 @@
 
     -->
 
-    <!--
+      <!--
 
         Cardurile astea apar in sectiunea "requests" pentru manageri 
     -->
 
-    <app-view-card></app-view-card>
 
-
+      <!-- <app-view-card></app-view-card> -->
+    </div>
+  </div>
 </div>

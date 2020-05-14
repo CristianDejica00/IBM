@@ -1,20 +1,20 @@
 <div class="card_line">
-    <div class="card_title">
-        Microsoft Office Certification Microsoft Office Certification Microsoft Office Certification
-    </div>
-    <div class="card_quarter">
-        Q1
-    </div>
+  <div class="card_title">
+    {{cert.title}}
+  </div>
+  <div class="card_quarter">
+    {{cert.quarter}}
+  </div>
 </div>
 <div class="card_line">
-    <div class="card_category">
-        Microsoft Office Certification
-    </div>
-    <div class="card_price">
-        $ 230.99
-    </div>
+  <div class="card_category">
+    {{cert.category}}
+  </div>
+  <div class="card_price">
+    ${{cert.cost}}
+  </div>
 </div>
 <div class="card_footer">
-    <button class="delete_button hoverable" (click)="openDeleteModal()">Delete</button>
-    <button class="edit_button hoverable" (click)="openEditCertModal()">Edit</button>
+  <button class="delete_button hoverable" (click)="openDeleteModal()">Delete</button>
+  <button class="edit_button hoverable" (click)="openEditCertModal()">Edit</button>
 </div>
