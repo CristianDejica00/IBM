@@ -22,10 +22,11 @@ export class ApplyCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openApplyModal() {
-    const applyDialog = new MatDialogConfig();
-    applyDialog.disableClose = true;
-    applyDialog.autoFocus = true;
-    this.dialog.open(ApplyModalComponent, applyDialog);
+  openApplyModal(_title: string) {
+    this.dialog.open(ApplyModalComponent, {
+      data: {
+        title: _title,
+      },
+    });
   }
 }

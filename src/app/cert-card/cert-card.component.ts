@@ -23,17 +23,20 @@ export class CertCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openDeleteModal() {
-    const deleteDialog = new MatDialogConfig();
-    deleteDialog.disableClose = true;
-    deleteDialog.autoFocus = true;
-    this.dialog.open(DeleteModalComponent, deleteDialog);
+  openDeleteModal(_id: string) {
+    this.dialog.open(DeleteModalComponent, {
+      data: {
+        id: _id,
+      },
+    });
   }
 
-  openEditCertModal() {
-    const editCertDialog = new MatDialogConfig();
-    editCertDialog.disableClose = true;
-    editCertDialog.autoFocus = true;
-    this.dialog.open(EditCertModalComponent, editCertDialog);
+  openEditCertModal(_id: string, _cert: Certificate) {
+    this.dialog.open(EditCertModalComponent, {
+      data: {
+        id: _id,
+        cert: _cert,
+      },
+    });
   }
 }

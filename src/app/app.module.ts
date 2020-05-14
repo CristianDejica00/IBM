@@ -31,6 +31,7 @@ import { MaterialModule } from "./shared/modules/material.module";
 import { CertCardComponent } from "./cert-card/cert-card.component";
 import { CreateModalComponent } from "./create-modal/create-modal.component";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -72,6 +73,7 @@ const appRoutes: Routes = [
     CreateModalComponent,
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

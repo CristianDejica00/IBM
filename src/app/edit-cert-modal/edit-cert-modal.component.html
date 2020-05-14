@@ -1,12 +1,15 @@
-<p class="modal_title">Edit certification</p>
-<input type="text" class="modal_input" placeholder="Title">
-<input type="text" class="modal_input" placeholder="Quarter">
-<select class="modal_input">
-    <option value="" selected>Q1</option>
-    <option value="">Q2</option>
-    <option value="">Q3</option>
-    <option value="">Q4</option>
-</select>
-<input type="text" class="modal_input" placeholder="Price">
-<button class="modal_submit hoverable">Save</button>
-<button class="modal_cancel hoverable" (click)="close()">Cancel</button>
+<form>
+  <p class="modal_title">Create certification</p>
+  <input type="text" class="modal_input" name="title" placeholder="Title" [(ngModel)]="editCert.title" required>
+  <input type="text" class="modal_input" name="category" placeholder="Category" [(ngModel)]="editCert.category"
+    required>
+  <select name="quarter" class="modal_input" required [(ngModel)]="editCert.quarter">
+    <option value="Q1">Q1</option>
+    <option value="Q2">Q2</option>
+    <option value="Q3">Q3</option>
+    <option value="Q4">Q4</option>
+  </select>
+  <input type="number" class="modal_input" name="cost" [(ngModel)]="editCert.cost" placeholder="Price" required>
+  <button class="modal_submit hoverable" (click)="editCertificate()" required>Save</button>
+  <button class="modal_cancel hoverable" (click)="close()">Cancel</button>
+</form>

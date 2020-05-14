@@ -15,6 +15,6 @@
   </div>
 </div>
 <div class="card_footer">
-  <button class="delete_button hoverable" (click)="openDeleteModal()">Delete</button>
-  <button class="edit_button hoverable" (click)="openEditCertModal()">Edit</button>
+  <button class="delete_button hoverable" (click)="openDeleteModal(cert.id)">Delete</button>
+  <button class="edit_button hoverable" (click)="openEditCertModal(cert.id,cert)">Edit</button>
 </div>
