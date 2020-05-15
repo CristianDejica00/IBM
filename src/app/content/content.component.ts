@@ -4,6 +4,7 @@ import { Request } from "../shared/models/request";
 import { Certificate } from "../shared/models/certificate";
 import { RequestService } from "../shared/services/request.service";
 import { CertificateService } from "../shared/services/certificate.service";
+import { Users } from "../shared/models/user";
 
 @Component({
   selector: "app-content",

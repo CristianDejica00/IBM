@@ -1,6 +1,6 @@
 <div class="card_line">
   <div class="card_title">
-    {{req.certificationTitle}}
+    {{req.userName}}
   </div>
   <div class="card_quarter">
     {{req.certificateQuarter}}
@@ -8,7 +8,7 @@
 </div>
 <div class="card_line">
   <div class="card_category">
-    {{req.userName}}
+    {{req.certificationTitle}}
 
   </div>
   <div class="card_price">
@@ -16,6 +16,6 @@
   </div>
 </div>
 <div class="card_footer">
-  <button class="delete_button hoverable" (click)="openDeleteModal()">Delete</button>
-  <button class="edit_button hoverable" (click)="openEditReqModal()">Edit</button>
+  <button class="delete_button hoverable" (click)="openDeleteModal(req.id)">Delete</button>
+  <button class="edit_button hoverable" (click)="openEditReqModal(req.id,req)">Edit</button>
 </div>

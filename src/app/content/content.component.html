@@ -8,9 +8,9 @@
 
       <!-- Cardurile astea apar in sectiunea "certifications" pentru clienti -->
 
-      <!-- <app-apply-card [cert]="cert"></app-apply-card> -->
+      <app-apply-card [cert]="cert"></app-apply-card>
 
-      <app-cert-card [cert]="cert"></app-cert-card>
+      <!-- <app-cert-card [cert]="cert"></app-cert-card> -->
     </div>
 
     <app-create-card></app-create-card>
@@ -29,6 +29,8 @@
     <div *ngFor="let req of reqData">
       <app-edit-card [req]="req"></app-edit-card>
       <!-- <app-view-card [req]="req"></app-view-card> -->
+
+
       <!--
 
         Cardurile astea apar in sectiunea "requests" pentru useri

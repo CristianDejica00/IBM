@@ -1,4 +1,6 @@
-<p class="modal_title">Microsoft Office Certification 2020</p>
-<textarea class="modal_textarea" placeholder="Business Justification"></textarea>
-<button class="modal_submit hoverable">Save</button>
-<button class="modal_cancel hoverable" (click)="close()">Cancel</button>
+<form>
+  <p class="modal_title">{{editReq.certificationTitle}}</p>
+  <textarea class="modal_textarea" placeholder="Business Justification"></textarea>
+  <button class="modal_submit hoverable" (click)="editRequest()">Save</button>
+  <button class="modal_cancel hoverable" (click)="close()">Cancel</button>
+</form>

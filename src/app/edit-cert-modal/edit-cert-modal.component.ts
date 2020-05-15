@@ -26,6 +26,7 @@ export class EditCertModalComponent implements OnInit {
     this.certApi
       .updateCertificate(this.id, this.editCert)
       .subscribe((_) => console.log("edited with success"));
+    this.editCertDialog.close();
   }
 
   close() {
