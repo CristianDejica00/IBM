@@ -2,15 +2,13 @@
 <div *ngIf="navRoute === 'Certificates'">
   <div id="content_grid">
     <div *ngFor="let cert of certData">
+      <div *ngFor="let user of userData">
+        <!-- Cardurile astea apar in sectiunea "certifications" pentru clienti -->
 
+        <app-apply-card [user]="user" [cert]="cert"></app-apply-card>
 
-
-
-      <!-- Cardurile astea apar in sectiunea "certifications" pentru clienti -->
-
-      <app-apply-card [cert]="cert"></app-apply-card>
-
-      <!-- <app-cert-card [cert]="cert"></app-cert-card> -->
+        <!-- <app-cert-card [cert]="cert"></app-cert-card> -->
+      </div>
     </div>
 
     <app-create-card></app-create-card>
@@ -24,12 +22,11 @@
 
     -->
 </div>
-<div *ngIf="navRoute ==='Requests'">
+<div *ngIf="navRoute === 'Requests'">
   <div id="content_grid">
     <div *ngFor="let req of reqData">
       <app-edit-card [req]="req"></app-edit-card>
       <!-- <app-view-card [req]="req"></app-view-card> -->
-
 
       <!--
 
@@ -43,7 +40,6 @@
 
         Cardurile astea apar in sectiunea "requests" pentru manageri 
     -->
-
 
       <!-- <app-view-card></app-view-card> -->
     </div>

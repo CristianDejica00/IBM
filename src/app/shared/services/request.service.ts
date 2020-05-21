@@ -1,10 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpClientModule,
-} from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, tap } from "rxjs/operators";
 import { Request } from "../models/request";
 
@@ -35,8 +31,8 @@ export class RequestService {
     );
   }
 
-  addRequest(request) {
-    return this.http.post(`${reqUrl}`, request, {
+  addRequest(request, userId: string, certId: string) {
+    return this.http.post(`${reqUrl}/${userId}/${certId}`, request, {
       responseType: "text" as "json",
     });
   }

@@ -1,6 +1,9 @@
 <form>
   <p class="modal_title">{{title}}</p>
-  <textarea class="modal_textarea" placeholder="Business Justification"></textarea>
-  <button class="modal_submit hoverable">Apply</button>
+  <textarea class="modal_textarea" placeholder="Business Justification" [(ngModel)]="newReq.justificationText"
+    name="justificationText" required>
+
+  </textarea>
+  <button class="modal_submit hoverable" (click)="addRequest()">Apply</button>
   <button class="modal_cancel hoverable" (click)="close()">Cancel</button>
 </form>

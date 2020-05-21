@@ -1,9 +1,13 @@
 <div class="header_line">
-    <app-searchbar></app-searchbar>
-    <app-avatar></app-avatar>
+  <app-searchbar></app-searchbar>
+  <div *ngFor="let user of userData">
+    <div *ngIf="user.id === 1">
+      <app-avatar [user]="user"></app-avatar>
+    </div>
+  </div>
 </div>
 <div class="header_line">
-    <app-quarter-filter></app-quarter-filter>
-    <app-status-filter></app-status-filter>
-    <app-export></app-export>
+  <app-quarter-filter></app-quarter-filter>
+  <app-status-filter></app-status-filter>
+  <app-export></app-export>
 </div>

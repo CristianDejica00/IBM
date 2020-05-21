@@ -25,9 +25,6 @@ export class EditCardComponent implements OnInit {
   ngOnInit(): void {}
 
   openDeleteModal(_id: string) {
-    const deleteDialog = new MatDialogConfig();
-    deleteDialog.disableClose = true;
-    deleteDialog.autoFocus = true;
     this.dialog.open(DeleteModalComponent, {
       data: {
         id: _id,
