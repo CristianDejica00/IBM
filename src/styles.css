@@ -202,9 +202,15 @@ app-status-filter {
   color: grey;
 }
 
+<<<<<<< HEAD
 #quarter_filter svg,
 #status_filter svg {
   height: 4px;
+=======
+#quarter_filter img,
+#status_filter img {
+    height:4px;
+>>>>>>> ef14738ec3dc19ad4ce59ee6245fbfbd835e7506
 }
 
 .filter_list {
@@ -252,11 +258,19 @@ app-status-filter {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 button svg {
   max-height: 100%;
   max-width: 100%;
   display: block;
   margin: 0px;
+=======
+button img {
+    max-height:100%;
+    max-width:100%;
+    display:block;
+    margin:0px;
+>>>>>>> ef14738ec3dc19ad4ce59ee6245fbfbd835e7506
 }
 
 app-navbar {
