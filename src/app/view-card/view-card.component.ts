@@ -23,17 +23,21 @@ export class ViewCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openViewModal() {
-    const viewDialog = new MatDialogConfig();
-    viewDialog.disableClose = true;
-    viewDialog.autoFocus = true;
-    this.dialog.open(ViewModalComponent, viewDialog);
+  openViewModal(_id: string, _req: Request) {
+    this.dialog.open(ViewModalComponent, {
+      data: {
+        id: _id,
+        req: _req,
+      },
+    });
   }
 
-  openEditReqModal() {
-    const editReqDialog = new MatDialogConfig();
-    editReqDialog.disableClose = true;
-    editReqDialog.autoFocus = true;
-    this.dialog.open(EditReqModalComponent, editReqDialog);
+  openEditReqModal(_id: string, _req: Request) {
+    this.dialog.open(EditReqModalComponent, {
+      data: {
+        id: _id,
+        req: _req,
+      },
+    });
   }
 }

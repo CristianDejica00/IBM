@@ -1,14 +1,32 @@
 <div class="card_line">
-    <div class="card_name">
-        John Doe
-    </div>
+  <div class="card_name">
+    {{req.userName}}
+  </div>
+  <div class="card_quarter">
+    {{req.certificateQuarter}}
+  </div>
 </div>
 <div class="card_line">
-    <div class="card_req_title">
-        Microsoft Office Certification
-    </div>
+  <div class="card_req_title">
+    {{req.certificationTitle}}
+  </div>
+  <div class="card_price">
+    ${{req.price}}
+  </div>
 </div>
 <div class="card_footer">
-    <button class="edit_button hoverable" (click)="openEditReqModal()">Edit</button>
-    <button class="view_button hoverable" (click)="openViewModal()">View</button>
+  <button class="edit_button hoverable" (click)="openEditReqModal(req.id, req)">Edit</button>
+  <div *ngIf="req.status === 'PENDING'">
+    <button class="view_button hoverable" (click)="openViewModal(req.id, req)">View</button>
+  </div>
+  <div *ngIf="req.status === 'DENIED'">
+    <button class="view_rejected_button">
+      Rejected
+    </button>
+  </div>
+  <div *ngIf="req.status === 'ACCEPTED'">
+    <button class="view_accepted_button ">
+      Accepted
+    </button>
+  </div>
 </div>

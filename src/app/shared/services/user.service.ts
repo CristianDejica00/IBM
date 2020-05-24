@@ -26,9 +26,8 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${userUrl}`).pipe(
-      tap((req) => console.log("fetched requests")),
-      catchError(this.handleError("getUsers", []))
-    );
+    return this.http
+      .get<User[]>(`${userUrl}`)
+      .pipe(catchError(this.handleError("getUsers", [])));
   }
 }

@@ -99,6 +99,7 @@ p {
   padding: 0px;
 }
 
+app-manager-home,
 app-home {
   padding: 40px;
   padding-bottom: 0px;
@@ -202,15 +203,14 @@ app-status-filter {
   color: grey;
 }
 
-<<<<<<< HEAD
 #quarter_filter svg,
 #status_filter svg {
   height: 4px;
-=======
+}
+
 #quarter_filter img,
 #status_filter img {
-    height:4px;
->>>>>>> ef14738ec3dc19ad4ce59ee6245fbfbd835e7506
+  height: 4px;
 }
 
 .filter_list {
@@ -258,19 +258,11 @@ app-status-filter {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-button svg {
+button img {
   max-height: 100%;
   max-width: 100%;
   display: block;
   margin: 0px;
-=======
-button img {
-    max-height:100%;
-    max-width:100%;
-    display:block;
-    margin:0px;
->>>>>>> ef14738ec3dc19ad4ce59ee6245fbfbd835e7506
 }
 
 app-navbar {
@@ -410,6 +402,28 @@ app-view-card {
   border: none;
   border-radius: 3px;
   background-color: #9CDB92;
+  color: white;
+  float: right;
+}
+
+.view_accepted_button {
+
+  padding: 0px 15px;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(107, 255, 70);
+  color: white;
+  float: right;
+}
+
+.view_rejected_button {
+
+  padding: 0px 15px;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(255, 42, 42);
   color: white;
   float: right;
 }

@@ -1,47 +1,40 @@
 <app-navbar (navbarEvent)="recieveNav($event)"></app-navbar>
-<div *ngIf="navRoute === 'Certificates'">
-  <div id="content_grid">
-    <div *ngFor="let cert of certData">
-      <div *ngFor="let user of userData">
-        <!-- Cardurile astea apar in sectiunea "certifications" pentru clienti -->
+<div *ngIf="navRole === '/manager-home'">
+  <div *ngIf="navRoute === 'Certificates'">
+    <div id="content_grid">
+      <div *ngFor="let cert of certData">
+        <app-cert-card [cert]="cert"></app-cert-card>
+      </div>
+      <app-create-card></app-create-card>
+    </div>
+  </div>
 
-        <app-apply-card [user]="user" [cert]="cert"></app-apply-card>
-
-        <!-- <app-cert-card [cert]="cert"></app-cert-card> -->
+  <div *ngIf="navRoute === 'Requests'">
+    <div id="content_grid">
+      <div *ngFor="let req of reqData">
+        <app-view-card [req]="req"></app-view-card>
       </div>
     </div>
-
-    <app-create-card></app-create-card>
   </div>
-  <!--
 
-        Cardurile astea apar in sectiunea "certifications" pentru manageri
-
-        <app-create-card></app-create-card>
-        <app-cert-card></app-cert-card>
-
-    -->
 </div>
-<div *ngIf="navRoute === 'Requests'">
-  <div id="content_grid">
-    <div *ngFor="let req of reqData">
-      <app-edit-card [req]="req"></app-edit-card>
-      <!-- <app-view-card [req]="req"></app-view-card> -->
 
-      <!--
+<div *ngIf="navRole === '/home'">
 
-        Cardurile astea apar in sectiunea "requests" pentru useri
-
-        <app-edit-card></app-edit-card>
-
-    -->
-
-      <!--
-
-        Cardurile astea apar in sectiunea "requests" pentru manageri 
-    -->
-
-      <!-- <app-view-card></app-view-card> -->
+  <div *ngIf="navRoute === 'Certificates'">
+    <div id="content_grid">
+      <div *ngFor="let cert of certData">
+        <app-apply-card [cert]="cert"></app-apply-card>
+      </div>
     </div>
   </div>
+
+  <div *ngIf="navRoute === 'Requests'">
+    <div id="content_grid">
+      <div *ngFor="let req of reqData">
+        <app-edit-card [req]="req"></app-edit-card>
+      </div>
+    </div>
+  </div>
+
 </div>

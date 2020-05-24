@@ -31,6 +31,7 @@ import { CertCardComponent } from "./cert-card/cert-card.component";
 import { CreateModalComponent } from "./create-modal/create-modal.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { ManagerHomeComponent } from "./manager-home/manager-home.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     component: RegisterComponent,
     data: { title: "Register" },
   },
-  { path: "home", component: HomeComponent, data: { title: "Home" } },
+  { path: "home", component: HomeComponent },
+  { path: "manager-home", component: ManagerHomeComponent },
 ];
 
 @NgModule({
@@ -70,6 +72,7 @@ const appRoutes: Routes = [
     ViewModalComponent,
     CertCardComponent,
     CreateModalComponent,
+    ManagerHomeComponent,
   ],
   imports: [
     FormsModule,

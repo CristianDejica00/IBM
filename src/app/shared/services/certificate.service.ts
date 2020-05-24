@@ -36,25 +36,22 @@ export class CertificateService {
   }
 
   public getCertificates(): Observable<Certificate[]> {
-    return this.http.get<Certificate[]>(`${certUrl}`).pipe(
-      tap(() => console.log("fetched certificates")),
-      catchError(this.handleError("getCertificate", []))
-    );
+    return this.http
+      .get<Certificate[]>(`${certUrl}`)
+      .pipe(catchError(this.handleError("getCertificate", [])));
   }
 
   public updateCertificate(id: string, cert: Certificate): Observable<any> {
     const url = `${certUrl}/${id}`;
-    return this.http.put(url, cert, httpOptions).pipe(
-      tap((_) => console.log(`updated certificate id=${id}`)),
-      catchError(this.handleError<any>("updateCertificates"))
-    );
+    return this.http
+      .put(url, cert, httpOptions)
+      .pipe(catchError(this.handleError<any>("updateCertificates")));
   }
 
   public deleteCertificate(id: string): Observable<Certificate> {
     const url = `${certUrl}/${id}`;
-    return this.http.delete<Certificate>(url, httpOptions).pipe(
-      tap((_) => console.log(`deleted certificate id=${id}`)),
-      catchError(this.handleError<Certificate>("deleteCertificate"))
-    );
+    return this.http
+      .delete<Certificate>(url, httpOptions)
+      .pipe(catchError(this.handleError<Certificate>("deleteCertificate")));
   }
 }

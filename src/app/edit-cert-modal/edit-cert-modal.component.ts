@@ -11,6 +11,7 @@ import { Certificate } from "../shared/models/certificate";
 export class EditCertModalComponent implements OnInit {
   id: string = "";
   editCert: Certificate = new Certificate();
+
   constructor(
     public editCertDialog: MatDialogRef<EditCertModalComponent>,
     private certApi: CertificateService,

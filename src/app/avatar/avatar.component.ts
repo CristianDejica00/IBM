@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { AvatarModalComponent } from "../avatar-modal/avatar-modal.component";
 import { MatDialogConfig, MatDialog } from "@angular/material/dialog";
-import { User } from "../shared/models/user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-avatar",
@@ -9,17 +9,13 @@ import { User } from "../shared/models/user";
   styleUrls: ["./avatar.component.css"],
 })
 export class AvatarComponent implements OnInit {
-  @Input() user: User = {
-    id: "",
-    email: "",
-    name: "",
-    password: "",
-    role: "",
-  };
+  navRole: string;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navRole = this.router.url;
+  }
 
   openAvatarModal() {
     const avatarDialog = new MatDialogConfig();

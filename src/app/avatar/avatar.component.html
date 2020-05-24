@@ -1,1 +1,6 @@
-<div id="avatar" class="hoverable" (click)="openAvatarModal()">{{user.id}}</div>
+<div *ngIf="navRole === '/manager-home'">
+  <div id="avatar" class="hoverable" (click)="openAvatarModal()">M</div>
+</div>
+<div *ngIf="navRole === '/home'">
+  <div id="avatar" class="hoverable" (click)="openAvatarModal()">U</div>
+</div>

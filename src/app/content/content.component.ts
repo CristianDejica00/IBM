@@ -6,7 +6,9 @@ import { RequestService } from "../shared/services/request.service";
 import { CertificateService } from "../shared/services/certificate.service";
 import { User } from "../shared/models/user";
 import { UserService } from "../shared/services/user.service";
-
+import { Observable } from "rxjs";
+import { ActivatedRoute, Router, NavigationStart } from "@angular/router";
+import { filter, map } from "rxjs/operators";
 @Component({
   selector: "app-content",
   templateUrl: "./content.component.html",
@@ -16,17 +18,15 @@ export class ContentComponent implements OnInit {
   @ViewChild(NavbarComponent) navData;
   reqData: Request[] = [];
   certData: Certificate[] = [];
-  userData: User[] = [];
-
-  user = User[0];
 
   constructor(
     private reqApi: RequestService,
     private certApi: CertificateService,
-    private userApi: UserService
+    public router: Router
   ) {}
 
   navRoute: string;
+  navRole: string;
 
   recieveNav($event) {
     this.navRoute = $event;
@@ -40,12 +40,8 @@ export class ContentComponent implements OnInit {
 
     this.reqApi.getRequests().subscribe((res: any) => {
       this.reqData = res;
-      console.log(this.reqData);
     });
 
-    this.userApi.getUsers().subscribe((res: any) => {
-      this.userData = res;
-      console.log(this.userData);
-    });
+    this.navRole = this.router.url;
   }
 }
